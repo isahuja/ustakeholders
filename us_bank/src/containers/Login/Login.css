@@ -25,3 +25,16 @@ label {
   text-align: left;
   display: block;
 }
+
+.loginbutton a {
+  padding: 10px;
+  border-radius: 5px;
+  background: #d62948;
+  color: #fff;
+  font-size: 13px;
+  border: solid 1px #bd0021;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
