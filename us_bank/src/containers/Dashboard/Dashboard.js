@@ -52,7 +52,7 @@ export default class Dashboard extends Component {
               <a href="#">Sampling</a>
             </li>
           </ul>
-          <div style={{ padding: "10px 30px" }}>
+          <div style={{ padding: "10px 30px", overflow: "auto" }}>
             {this.state.transationdata ? <Transaction /> : null}
             {this.state.sampling ? <Sampling /> : null}
             {this.state.heirarchy ? <Heirarchy /> : null}

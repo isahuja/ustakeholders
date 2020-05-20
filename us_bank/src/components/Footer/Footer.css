@@ -1,0 +1,13 @@
+Footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+footer ul li {
+  list-style: none;
+  float: left;
+  color: #0c2074;
+  margin-right: 30px;
+}

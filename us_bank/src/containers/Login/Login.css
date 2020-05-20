@@ -1,6 +1,6 @@
 .outercontainer {
   background: #0c2074;
-  padding: 50px;
+  padding: 30px;
 }
 
 .containerlogin {
@@ -8,16 +8,11 @@
 }
 
 .containerlogin {
-  display: -webkit-flexbox;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  display: block;
+
+  width: 300px;
+  float: right;
+  margin: 20px 20px;
 }
 
 label {
@@ -37,4 +32,14 @@ label {
   margin-top: 10px;
   display: inline-block;
   text-decoration: none;
+}
+
+.otercontainerlogin {
+  overflow: hidden;
+}
+
+.headingproject {
+  padding: 100px 50px 0 20px;
+  color: #0c2074;
+  float: left;
 }

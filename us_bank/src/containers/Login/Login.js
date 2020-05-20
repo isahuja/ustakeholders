@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Input from "../../components/UI/Input/Input";
 //import Button from "../../components/UI/Button/Button";
-import Logo from "../../components/Logo/Logo";
+// import Logo from "../../components/Logo/Logo";
 import Aux from "react-aux";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import "./Login.css";
 import Dashboard from "../Dashboard/Dashboard";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -15,10 +17,17 @@ class Login extends Component {
         <Router>
           <Switch>
             <Route exact path="/">
-              <div className="containerlogin">
+              <Header></Header>
+              <div className="otercontainerlogin">
+                <div class="headingproject">
+                  <h2>
+                    Sample Management <span style={{ color: "#000" }}>&</span>{" "}
+                    <span style={{ color: "#d62948" }}>Data Query System</span>
+                  </h2>
+                </div>
                 <div className="containerlogin">
                   <div className="outercontainer">
-                    <Logo />
+                    {/* <Logo /> */}
                     <div>
                       <div>
                         <label>Username</label>
@@ -39,6 +48,7 @@ class Login extends Component {
                   </div>
                 </div>
               </div>
+              <Footer></Footer>
             </Route>
             <Route path="/dashboard">
               <Dashboard />

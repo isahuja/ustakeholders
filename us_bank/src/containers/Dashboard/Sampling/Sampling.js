@@ -6,6 +6,16 @@ const Sampling = (props) => {
   return (
     <Aux>
       <h3>Sampling</h3>
+      <div>
+        <input
+          type="text"
+          placeholder="Search"
+          style={{ width: "200px" }}
+        ></input>
+        &nbsp;&nbsp;
+        <button class="btn btn-primary">Add Column</button>
+      </div>
+
       <table className="table">
         <thead className="thead-dark">
           <tr>
