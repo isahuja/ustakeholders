@@ -3,7 +3,7 @@ import Aux from "react-aux";
 import "bootstrap/dist/css/bootstrap.css";
 import Header from "../../components/Header/Header";
 // import Transaction from "./Transaction/Transaction";
-// import Sampling from "./Sampling/Sampling";
+import Sampling from "./Sampling/Sampling";
 // import Heirarchy from "./Heirarchy/Heirarchy";
 import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
 import Modal from "../../components/Modal/Modal";
@@ -70,6 +70,7 @@ export default class Dashboard extends Component {
             <div style={{ paddingTop: "30px" }}>
               <div className="autosearch">
                 <Searchsuggestion></Searchsuggestion>
+                <Sampling />
               </div>
               <div className="advsearch">
                 <button

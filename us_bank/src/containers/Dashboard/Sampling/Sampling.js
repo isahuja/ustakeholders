@@ -5,8 +5,8 @@ import Aux from "react-aux";
 const Sampling = (props) => {
   return (
     <Aux>
-      <h3>Sampling</h3>
-      <div>
+      {/* <h3>Sampling</h3> */}
+      {/* <div>
         <input
           type="text"
           placeholder="Search"
@@ -14,8 +14,8 @@ const Sampling = (props) => {
         ></input>
         &nbsp;&nbsp;
         <button class="btn btn-primary">Add Column</button>
-      </div>
-
+      </div> */}
+      <hr></hr>
       <table className="table">
         <thead className="thead-dark">
           <tr>
