@@ -2,23 +2,34 @@ import React, { Component } from "react";
 import Aux from "react-aux";
 import "bootstrap/dist/css/bootstrap.css";
 import Header from "../../components/Header/Header";
-import Transaction from "./Transaction/Transaction";
-import Sampling from "./Sampling/Sampling";
-import Heirarchy from "./Heirarchy/Heirarchy";
+// import Transaction from "./Transaction/Transaction";
+// import Sampling from "./Sampling/Sampling";
+// import Heirarchy from "./Heirarchy/Heirarchy";
+import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
+import Modal from "../../components/Modal/Modal";
 
 export default class Dashboard extends Component {
   state = {
     transationdata: true,
     heirarchy: false,
     sampling: false,
+    purchasing: false,
   };
+
+  showAdvancefilter = () => {
+    this.setState({ purchasing: true });
+  };
+  closeModal = () => {
+    this.setState({ purchasing: false });
+  };
+  purchaseCancelHandler = () => {};
 
   changeTabs = (tab) => {
     let state = { ...this.state };
     Object.keys(state).forEach((itm) => {
       itm === tab ? (state[itm] = true) : (state[itm] = false);
     });
-    debugger;
+
     this.setState(state);
   };
   render() {
@@ -52,10 +63,54 @@ export default class Dashboard extends Component {
               <a href="#">Sampling</a>
             </li>
           </ul>
-          <div style={{ padding: "10px 30px", overflow: "auto" }}>
-            {this.state.transationdata ? <Transaction /> : null}
+          <div style={{ padding: "10px 30px" }}>
+            {/* {this.state.transationdata ? <Transaction /> : null}
             {this.state.sampling ? <Sampling /> : null}
-            {this.state.heirarchy ? <Heirarchy /> : null}
+                    {this.state.heirarchy ? <Heirarchy /> : null} */}
+            <div style={{ paddingTop: "30px" }}>
+              <div className="autosearch">
+                <Searchsuggestion></Searchsuggestion>
+              </div>
+              <div className="advsearch">
+                <button
+                  className="btn btn-primary"
+                  onClick={this.showAdvancefilter}
+                >
+                  Advance Search
+                </button>
+
+                <Modal
+                  show={this.state.purchasing}
+                  modalClosed={this.purchaseCancelHandler}
+                >
+                  <h4>
+                    <u>Advance Search</u>
+                  </h4>
+                  <select>
+                    <option>LPId</option>
+                  </select>
+
+                  <select>
+                    <option>Branch Id</option>
+                  </select>
+                  <select>
+                    <option>Email</option>
+                  </select>
+                  <select>
+                    <option>Customer Name</option>
+                  </select>
+                  <div style={{ textAlign: "center" }}>
+                    <br></br>
+                    <button
+                      onClick={this.closeModal}
+                      className="btn btn-primary"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </Modal>
+              </div>
+            </div>
           </div>
         </div>
       </Aux>

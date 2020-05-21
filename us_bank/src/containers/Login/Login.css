@@ -43,3 +43,13 @@ label {
   color: #0c2074;
   float: left;
 }
+
+.advsearch,
+.autosearch {
+  float: left;
+  display: inline-block;
+}
+
+.autosearch {
+  width: 80%;
+}

@@ -8,6 +8,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Login.css";
 import Dashboard from "../Dashboard/Dashboard";
+// import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class Login extends Component {
