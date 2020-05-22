@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Header from "../../components/Header/Header";
 // import Transaction from "./Transaction/Transaction";
 import Sampling from "./Sampling/Sampling";
-// import Heirarchy from "./Heirarchy/Heirarchy";
+import Heirarchy from "./Heirarchy/Heirarchy";
 import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
 import Modal from "../../components/Modal/Modal";
 
@@ -64,13 +64,13 @@ export default class Dashboard extends Component {
             </li>
           </ul>
           <div style={{ padding: "10px 30px" }}>
-            {/* {this.state.transationdata ? <Transaction /> : null}
-            {this.state.sampling ? <Sampling /> : null}
-                    {this.state.heirarchy ? <Heirarchy /> : null} */}
             <div style={{ paddingTop: "30px" }}>
               <div className="autosearch">
                 <Searchsuggestion></Searchsuggestion>
-                <Sampling />
+                {/* <Sampling /> */}
+                {this.state.transationdata ? <Sampling /> : null}
+                {this.state.sampling ? <Sampling /> : null}
+                {this.state.heirarchy ? <Heirarchy /> : null}
               </div>
               <div className="advsearch">
                 <button
