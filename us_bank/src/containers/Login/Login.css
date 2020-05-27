@@ -53,3 +53,8 @@ label {
 .autosearch {
   width: 80%;
 }
+
+input[type="checkbox"] {
+  width: auto;
+  height: auto;
+}

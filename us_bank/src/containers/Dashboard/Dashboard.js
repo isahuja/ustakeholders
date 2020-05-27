@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import Aux from "react-aux";
 import "bootstrap/dist/css/bootstrap.css";
 import Header from "../../components/Header/Header";
-// import Transaction from "./Transaction/Transaction";
+
 import Sampling from "./Sampling/Sampling";
 import Heirarchy from "./Heirarchy/Heirarchy";
 import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
 import Modal from "../../components/Modal/Modal";
+import Transaction from "./Transaction/Transaction";
 
 export default class Dashboard extends Component {
   state = {
@@ -68,7 +69,7 @@ export default class Dashboard extends Component {
               <div className="autosearch">
                 <Searchsuggestion></Searchsuggestion>
                 {/* <Sampling /> */}
-                {this.state.transationdata ? <Sampling /> : null}
+                {this.state.transationdata ? <Transaction /> : null}
                 {this.state.sampling ? <Sampling /> : null}
                 {this.state.heirarchy ? <Heirarchy /> : null}
               </div>

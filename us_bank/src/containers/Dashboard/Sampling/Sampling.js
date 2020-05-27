@@ -28,12 +28,9 @@ const Sampling = (props) => {
 
   const tablehtml = table.map((itm, i) => {
     return (
-      <tr>
+      <tr key={itm.first + itm.last + i}>
         <td>
-          <span
-            class="glyphicon glyphicon-download-alt"
-            aria-hidden="true"
-          ></span>
+          <span className="glyphicon glyphicon-link" aria-hidden="true"></span>
         </td>
         <td>{itm.first}</td>
         <td>{itm.last}</td>
@@ -58,7 +55,7 @@ const Sampling = (props) => {
       <table className="table">
         <thead className="thead-dark">
           <tr>
-            <th scope="col">Download</th>
+            <th scope="col">View</th>
             <th scope="col">First</th>
             <th scope="col">Last</th>
             <th scope="col">Handle</th>
