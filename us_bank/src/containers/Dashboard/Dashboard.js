@@ -38,6 +38,8 @@ export default class Dashboard extends Component {
       <Aux>
         <Header></Header>
         <div style={{ padding: "50px" }}>
+          <h2>Branch Program</h2>
+          <br></br>
           <ul className="nav nav-tabs">
             <li
               onClick={() => {

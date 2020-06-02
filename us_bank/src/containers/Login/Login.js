@@ -8,6 +8,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Login.css";
 import Dashboard from "../Dashboard/Dashboard";
+import BusinessCategory from "../Dashboard/BusinessCategory/BusinessCategory";
 // import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -20,7 +21,7 @@ class Login extends Component {
             <Route exact path="/">
               <Header></Header>
               <div className="otercontainerlogin">
-                <div class="headingproject">
+                <div className="headingproject">
                   <h2>
                     Sample Management <span style={{ color: "#000" }}>&</span>{" "}
                     <span style={{ color: "#d62948" }}>Data Query System</span>
@@ -44,7 +45,7 @@ class Login extends Component {
 
                     <div className="loginbutton">
                       {/* <Button /> */}
-                      <Link to="/dashboard">Log In</Link>
+                      <Link to="/businesscategory">Log In</Link>
                     </div>
                   </div>
                 </div>
@@ -53,6 +54,9 @@ class Login extends Component {
             </Route>
             <Route path="/dashboard">
               <Dashboard />
+            </Route>
+            <Route path="/businesscategory">
+              <BusinessCategory />
             </Route>
           </Switch>
         </Router>
