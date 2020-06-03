@@ -1,0 +1,45 @@
+.user .userimg {
+  background: #ccc;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.user .userimg {
+  display: inline-block;
+}
+.user {
+  position: relative;
+  width: 250px;
+  overflow: hidden;
+  text-align: center;
+  float: right;
+  background: #eaeaea;
+  padding: 15px;
+}
+
+.user .u-mgmnt {
+  /* position: absolute;
+  top: 60px;
+  right: 0; */
+  /* background: #d3d3d3; */
+}
+
+.user .u-mgmnt li {
+  list-style: none;
+  padding: 10px;
+  text-align: left;
+}
+
+.user .u-mgmnt li:hover {
+  background: #0c2074;
+  color: #fff;
+}
+.user .u-mgmnt li:last-child {
+  text-decoration: underline;
+}
+
+.user .u-mgmnt ul {
+  padding: 0;
+  margin: 0;
+}

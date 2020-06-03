@@ -4,6 +4,7 @@ import Header from "../../../components/Header/Header";
 import Dashboard from "../Dashboard";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./BusinessCategory.css";
+import Usercontrol from "../../../components/Usercontrol/Usercontrol";
 
 class BusinessCategory extends Component {
   state = {
@@ -41,6 +42,7 @@ class BusinessCategory extends Component {
             <Route exact path="/businesscategory">
               <Header></Header>
               <div className="businsesscategory" style={{ padding: "50px" }}>
+                <Usercontrol></Usercontrol>
                 <div>Please select your CX journey program</div>
                 <br></br>
                 <table className="table">
@@ -64,7 +66,19 @@ class BusinessCategory extends Component {
                     <tr>
                       <td>
                         {" "}
-                        <button>Select</button>
+                        <button>
+                          {" "}
+                          <Link to="/dashboard">Select</Link>
+                        </button>
+                      </td>
+                      <td>Contact Center</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        {" "}
+                        <button>
+                          <Link to="/dashboard">Select</Link>
+                        </button>
                       </td>
                       <td>Mortgage Organization</td>
                     </tr>
@@ -72,23 +86,38 @@ class BusinessCategory extends Component {
                     <tr>
                       <td>
                         {" "}
-                        <button>Select</button>
+                        <button>
+                          <Link to="/dashboard">Select</Link>
+                        </button>
                       </td>
                       <td>ATM</td>
                     </tr>
                     <tr>
                       <td>
                         {" "}
-                        <button>Select</button>
+                        <button>
+                          <Link to="/dashboard">Select</Link>
+                        </button>
                       </td>
                       <td>Digital</td>
                     </tr>
                     <tr>
                       <td>
                         {" "}
-                        <button>Select</button>
+                        <button>
+                          <Link to="/dashboard">Select</Link>
+                        </button>
                       </td>
                       <td>Loyality</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        {" "}
+                        <button>
+                          <Link to="/dashboard">Select</Link>
+                        </button>
+                      </td>
+                      <td>All Programs</td>
                     </tr>
                   </tbody>
                 </table>
