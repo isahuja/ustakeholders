@@ -58,6 +58,18 @@ class Heirarchy extends Component {
     });
   };
 
+  deleteRecord = (id) => {
+    debugger;
+    let elem = this.state.data.find((elem, i) => {
+      debugger;
+      return elem.first + elem.last + i == id ? i : null;
+    });
+    const data = [...this.state.data];
+
+    data.splice(elem, 1);
+    this.setState({ data: data });
+  };
+
   render() {
     let tablehtml = this.state.data.map((itm, i) => {
       return (
@@ -86,6 +98,9 @@ class Heirarchy extends Component {
           </td>
           <td>
             <span
+              onClick={() => {
+                this.deleteRecord(itm.first + itm.last + i);
+              }}
               className="glyphicon glyphicon-glyphicon glyphicon-remove-sign"
               aria-hidden="true"
             ></span>
