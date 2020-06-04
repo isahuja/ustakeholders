@@ -11,6 +11,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import BusinessCategory from "../Dashboard/BusinessCategory/BusinessCategory";
 // import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import ContactCenter from "../Dashboard/ContactCenter/ContactCenter";
 
 class Login extends Component {
   render() {
@@ -45,7 +46,9 @@ class Login extends Component {
 
                     <div className="loginbutton">
                       {/* <Button /> */}
-                      <Link to="/businesscategory">Log In</Link>
+                      <Link to="/businesscategory">LogIn as Power User</Link>
+                      <Link to="/dashboard">LogIn as Branch User</Link>
+                      <Link to="/contactcenter">LogIn as Contact Center</Link>
                     </div>
                   </div>
                 </div>
@@ -57,6 +60,9 @@ class Login extends Component {
             </Route>
             <Route path="/businesscategory">
               <BusinessCategory />
+            </Route>
+            <Route path="/contactcenter">
+              <ContactCenter />
             </Route>
           </Switch>
         </Router>

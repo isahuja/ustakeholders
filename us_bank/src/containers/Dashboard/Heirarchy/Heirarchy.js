@@ -160,6 +160,14 @@ class Heirarchy extends Component {
           className="glyphicon glyphicon-list-alt"
           aria-hidden="true"
         ></span>
+        <input
+          style={{
+            width: "100px",
+            display: "inline-block",
+            marginRight: "10px",
+          }}
+          type="file"
+        />
 
         <hr></hr>
         <table className="table">

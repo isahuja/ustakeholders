@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import Aux from "react-aux";
-import "bootstrap/dist/css/bootstrap.css";
-import Header from "../../components/Header/Header";
+import Header from "../../../components/Header/Header";
 
-import Sampling from "./Sampling/Sampling";
-import Heirarchy from "./Heirarchy/Heirarchy";
-import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
-import Modal from "../../components/Modal/Modal";
-import Transaction from "./Transaction/Transaction";
-import Usercontrol from "../../components/Usercontrol/Usercontrol";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "./ContactCenter.css";
 
-export default class Dashboard extends Component {
+import Sampling from "./../Sampling/Sampling";
+import Heirarchy from "./../Heirarchy/Heirarchy";
+import Searchsuggestion from "../../Searchsuggestion/Searchsuggestion";
+import Modal from "../../../components/Modal/Modal";
+import Transaction from "./../Transaction/Transaction";
+
+class ContactCenter extends Component {
   state = {
     transationdata: true,
     heirarchy: false,
@@ -39,7 +40,7 @@ export default class Dashboard extends Component {
       <Aux>
         <Header></Header>
         <div style={{ padding: "50px" }}>
-          <h2>Branch Program</h2>
+          <h2>Contact Center Program</h2>
           {/* <h2 className="contact">Contact Center</h2> */}
           <br></br>
           <ul className="nav nav-tabs">
@@ -123,3 +124,5 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+export default ContactCenter;
