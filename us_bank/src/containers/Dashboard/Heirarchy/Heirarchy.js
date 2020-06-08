@@ -80,6 +80,16 @@ class Heirarchy extends Component {
     window.open("/editheirarchy?id=" + id, "_blank");
   };
 
+  editHistory = () => {
+    debugger;
+    window.open("/edithistory", "_blank");
+  };
+
+  onView = () => {
+    debugger;
+    window.open("/ViewRecord", "_blank");
+  };
+
   fileUpload = () => {
     debugger;
     this.fileInput.click();
@@ -101,6 +111,8 @@ class Heirarchy extends Component {
             <span
               className="glyphicon glyphicon-link"
               aria-hidden="true"
+              title="View"
+              onClick={() => this.onView(itm.first + itm.last + i)}
             ></span>
           </td>
           <td>{itm.first}</td>
@@ -161,6 +173,9 @@ class Heirarchy extends Component {
           }}
           className="glyphicon glyphicon-plus"
           aria-hidden="true"
+          onClick={() => {
+            this.fileUpload();
+          }}
         ></span>
 
         <span
@@ -226,6 +241,9 @@ class Heirarchy extends Component {
           }}
           className="glyphicon glyphicon-list-alt"
           aria-hidden="true"
+          onClick={() => {
+            this.editHistory();
+          }}
         ></span>
         <input
           style={{

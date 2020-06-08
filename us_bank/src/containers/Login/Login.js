@@ -13,6 +13,8 @@ import BusinessCategory from "../Dashboard/BusinessCategory/BusinessCategory";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ContactCenter from "../Dashboard/ContactCenter/ContactCenter";
 import Editheirarchy from "../Dashboard/EditHeirarchy/EditHeirarchy";
+import EditHistory from "../Dashboard/EditHistory/EditHistory";
+import ViewRecord from "../Dashboard/ViewRecord/ViewRecord";
 
 class Login extends Component {
   render() {
@@ -68,6 +70,12 @@ class Login extends Component {
             </Route>
             <Route path="/editheirarchy">
               <Editheirarchy />
+            </Route>
+            <Route path="/EditHistory">
+              <EditHistory />
+            </Route>
+            <Route path="/EditHistory">
+              <ViewRecord />
             </Route>
           </Switch>
         </Router>
