@@ -12,6 +12,7 @@ import BusinessCategory from "../Dashboard/BusinessCategory/BusinessCategory";
 // import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ContactCenter from "../Dashboard/ContactCenter/ContactCenter";
+import Editheirarchy from "../Dashboard/EditHeirarchy/EditHeirarchy";
 
 class Login extends Component {
   render() {
@@ -58,11 +59,15 @@ class Login extends Component {
             <Route path="/dashboard">
               <Dashboard />
             </Route>
+
             <Route path="/businesscategory">
               <BusinessCategory />
             </Route>
             <Route path="/contactcenter">
               <ContactCenter />
+            </Route>
+            <Route path="/editheirarchy">
+              <Editheirarchy />
             </Route>
           </Switch>
         </Router>

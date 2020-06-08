@@ -8,7 +8,6 @@ import Heirarchy from "./Heirarchy/Heirarchy";
 import Searchsuggestion from "../Searchsuggestion/Searchsuggestion";
 import Modal from "../../components/Modal/Modal";
 import Transaction from "./Transaction/Transaction";
-import Usercontrol from "../../components/Usercontrol/Usercontrol";
 
 export default class Dashboard extends Component {
   state = {

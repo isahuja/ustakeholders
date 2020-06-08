@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Aux from "react-aux";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Editheirarchy from "../EditHeirarchy/EditHeirarchy";
 
 class Heirarchy extends Component {
   state = {
@@ -60,14 +62,28 @@ class Heirarchy extends Component {
 
   deleteRecord = (id) => {
     debugger;
-    let elem = this.state.data.find((elem, i) => {
-      debugger;
-      return elem.first + elem.last + i == id ? i : null;
-    });
-    const data = [...this.state.data];
+    let agree = window.confirm("Are you sure want to delete");
+    if (agree) {
+      let elem = this.state.data.find((elem, i) => {
+        debugger;
+        return elem.first + elem.last + i === id ? i : null;
+      });
+      const data = [...this.state.data];
 
-    data.splice(elem, 1);
-    this.setState({ data: data });
+      data.splice(elem, 1);
+      this.setState({ data: data });
+    }
+  };
+
+  editRecord = (id) => {
+    debugger;
+    window.open("/editheirarchy?id=" + id, "_blank");
+  };
+
+  fileUpload = () => {
+    debugger;
+    this.fileInput.click();
+    // React.createElement("label", { htmlFor: "myfile" }, "Select File");
   };
 
   render() {
@@ -92,6 +108,9 @@ class Heirarchy extends Component {
           <td>{itm.handle}</td>
           <td>
             <span
+              onClick={() => {
+                this.editRecord(itm.first + itm.last + i);
+              }}
               className="glyphicon glyphicon-edit"
               aria-hidden="true"
             ></span>
@@ -124,42 +143,75 @@ class Heirarchy extends Component {
         <hr></hr>
         <span
           title="Edit"
-          style={{ marginRight: "10px", padding: "5px", background: "#ccc" }}
+          style={{
+            marginRight: "10px",
+            padding: "5px",
+            background: "#ccc",
+          }}
           className="glyphicon glyphicon-edit"
           aria-hidden="true"
         ></span>
 
         <span
           title="Add"
-          style={{ marginRight: "10px", padding: "5px", background: "#ccc" }}
+          style={{
+            marginRight: "10px",
+            padding: "5px",
+            background: "#ccc",
+          }}
           className="glyphicon glyphicon-plus"
           aria-hidden="true"
         ></span>
 
         <span
           title="import from file"
-          style={{ marginRight: "10px", padding: "5px", background: "#ccc" }}
+          style={{
+            marginRight: "10px",
+            padding: "5px",
+            background: "#ccc",
+          }}
           className="glyphicon glyphicon-import"
           aria-hidden="true"
+          onClick={() => {
+            this.fileUpload();
+          }}
         ></span>
 
         <span
           title="Import to qualtrics"
-          style={{ marginRight: "10px", padding: "5px", background: "#ccc" }}
+          style={{
+            marginRight: "10px",
+            padding: "5px",
+            background: "#ccc",
+          }}
           className="glyphicon glyphicon-import"
           aria-hidden="true"
+          onClick={() => {
+            this.fileUpload();
+          }}
         ></span>
 
         <span
           title="Import users to DB"
-          style={{ marginRight: "10px", padding: "5px", background: "#ccc" }}
+          style={{
+            marginRight: "10px",
+            padding: "5px",
+            background: "#ccc",
+          }}
           className="glyphicon glyphicon-import"
           aria-hidden="true"
+          onClick={() => {
+            this.fileUpload();
+          }}
         ></span>
 
         <span
           title="Download"
-          style={{ marginRight: "10px", padding: "5px", background: "#ccc" }}
+          style={{
+            marginRight: "10px",
+            padding: "5px",
+            background: "#ccc",
+          }}
           className="glyphicon glyphicon-download-alt"
           aria-hidden="true"
         ></span>
@@ -180,7 +232,9 @@ class Heirarchy extends Component {
             width: "100px",
             display: "inline-block",
             marginRight: "10px",
+            visibility: "hidden",
           }}
+          ref={(fileInput) => (this.fileInput = fileInput)}
           type="file"
         />
 
