@@ -8,27 +8,39 @@ class Heirarchy extends Component {
   state = {
     data: [
       {
-        first: "Mark",
-        last: "Otto",
-        handle: "@mdo",
+        STARTDT: "2020-03-09 09:01:14",
+        ENDDT: "2020-03-09 09:28:52",
+        CHANNEL: "Branch",
+        ROUTE: "In Person",
+        USB_MODE: "C",
+        LOGIN: "1000004",
         isChecked: false,
       },
       {
-        first: "Jacob",
-        last: "Thornton",
-        handle: "@fat",
+        STARTDT: "2020-03-09 09:01:14",
+        ENDDT: "2020-03-09 09:28:52",
+        CHANNEL: "Branch",
+        ROUTE: "In Person",
+        USB_MODE: "C",
+        LOGIN: "1000004",
         isChecked: false,
       },
       {
-        first: "Larry",
-        last: "the Bird",
-        handle: "@twitter",
+        STARTDT: "2020-03-09 09:01:14",
+        ENDDT: "2020-03-09 09:28:52",
+        CHANNEL: "Branch",
+        ROUTE: "In Person",
+        USB_MODE: "C",
+        LOGIN: "1000004",
         isChecked: false,
       },
       {
-        first: "Larry",
-        last: "the Bird",
-        handle: "@twitter",
+        STARTDT: "2020-03-09 09:01:14",
+        ENDDT: "2020-03-09 09:28:52",
+        CHANNEL: "Branch",
+        ROUTE: "In Person",
+        USB_MODE: "C",
+        LOGIN: "1000004",
         isChecked: false,
       },
     ],
@@ -39,7 +51,7 @@ class Heirarchy extends Component {
     const newdata = [...this.state.data];
 
     newdata.forEach((itm, i) => {
-      if (itm.first + itm.last + i === item) {
+      if (itm.CHANNEL + i === item) {
         itm.isChecked = !itm.isChecked;
       }
     });
@@ -76,8 +88,21 @@ class Heirarchy extends Component {
   };
 
   editRecord = (id) => {
-    debugger;
-    window.open("/editheirarchy?id=" + id, "_blank");
+    if (id) {
+      debugger;
+      window.open("/editheirarchy?id=" + id, "_blank");
+    } else {
+      let count = 0;
+      this.state.data.forEach((itm) => {
+        count += itm.isChecked ? 1 : 0;
+      });
+
+      if (count > 1) {
+        window.open("/editheirarchy?id=" + id, "_blank");
+      } else {
+        alert("Please select more than one record!");
+      }
+    }
   };
 
   editHistory = () => {
@@ -99,11 +124,11 @@ class Heirarchy extends Component {
   render() {
     let tablehtml = this.state.data.map((itm, i) => {
       return (
-        <tr key={itm.first + itm.last + i}>
+        <tr key={itm.CHANNEL + i}>
           <td>
             <input
               type="checkbox"
-              onChange={() => this.checkboxHandler(itm.first + itm.last + i)}
+              onChange={() => this.checkboxHandler(itm.CHANNEL + i)}
               checked={itm.isChecked}
             ></input>
           </td>
@@ -112,7 +137,7 @@ class Heirarchy extends Component {
               className="glyphicon glyphicon-link"
               aria-hidden="true"
               title="View"
-              onClick={() => this.onView(itm.first + itm.last + i)}
+              onClick={() => this.onView(itm.CHANNEL + i)}
             ></span>
           </td>
           <td>{itm.first}</td>
@@ -121,7 +146,7 @@ class Heirarchy extends Component {
           <td>
             <span
               onClick={() => {
-                this.editRecord(itm.first + itm.last + i);
+                this.editRecord(itm.CHANNEL + i);
               }}
               className="glyphicon glyphicon-edit"
               aria-hidden="true"
@@ -130,7 +155,7 @@ class Heirarchy extends Component {
           <td>
             <span
               onClick={() => {
-                this.deleteRecord(itm.first + itm.last + i);
+                this.deleteRecord(itm.CHANNEL + i);
               }}
               className="glyphicon glyphicon-glyphicon glyphicon-remove-sign"
               aria-hidden="true"
@@ -162,6 +187,9 @@ class Heirarchy extends Component {
           }}
           className="glyphicon glyphicon-edit"
           aria-hidden="true"
+          onClick={() => {
+            this.editRecord(null);
+          }}
         ></span>
 
         <span
